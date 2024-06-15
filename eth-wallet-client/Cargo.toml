@@ -1,8 +1,26 @@
 [package]
-name = "eth-wallet-client"
+name = "wallet-client"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+tokio = { version = "1", features = ["full"] }
+warp = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+alloy = { git = "https://github.com/alloy-rs/alloy", rev = "b000e16", features = [
+    "full",
+    "node-bindings",
+    "rpc-types-trace",
+    "signer-aws",
+    "signer-keystore",
+    "signer-ledger",
+    "signer-mnemonic",
+    "signer-trezor",
+    "signer-yubihsm",
+] }
+
+eyre = "0.6.12"
